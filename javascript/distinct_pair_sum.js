@@ -1,5 +1,22 @@
 function distinctPairSum(arr, k) {
-  // type your code here
+  const newObj = {};
+
+  if (arr.length < 2) {
+    return [];
+  }
+
+  for (i = 0; i < arr.length; i++) {
+    let current = arr[i]
+    let next = arr[i+1]
+
+    if (current + next === k) {
+      newObj[current] = [current, next]
+      i++
+    }
+
+  }
+  
+  return Object.values(newObj);
 }
 
 if (require.main === module) {
